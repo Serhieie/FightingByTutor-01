@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fighter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        user-select: none;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: rgb(41, 33, 48)">
+    <div
+      id="health"
+      style="
+        position: relative;
+        width: 1024px;
+        top: 100px;
+        z-index: 99;
+        left: 14.4%;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <!-- player hp -->
+        <div
+          style="
+            position: relative;
+            height: 40px;
+            width: 100%;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            overflow: hidden;
+            border: 4px solid rgb(101, 81, 117);
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                to right,
+                rgb(249, 249, 0),
+                red 60%,
+                rgb(88, 0, 0)
+              );
+              height: 40px;
+            "
+          ></div>
+
+          <div
+            id="playerHealth"
+            style="
+              position: absolute;
+              background: linear-gradient(
+                to right,
+                rgb(70, 41, 195),
+                #818cf8 60%
+              );
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+            "
+          ></div>
+        </div>
+        <!-- timer -->
+        <div
+          style="
+            background-color: rgb(77, 63, 88);
+            height: 94px;
+            width: 94px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            transform: rotate(45deg);
+            z-index: 99;
+            position: relative;
+            border: 4px solid rgb(101, 81, 117);
+          "
+        >
+          <p
+            id="timerText"
+            style="
+              font-family: 'Press Start 2P', system-ui;
+              font-size: 36px;
+              font-weight: 800;
+              color: #b4baf6;
+              position: absolute;
+              top: 5%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(314deg);
+            "
+          >
+            10
+          </p>
+        </div>
+        <!-- enemy hp -->
+        <div
+          style="
+            position: relative;
+            height: 40px;
+            width: 100%;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+            overflow: hidden;
+            border: 4px solid rgb(101, 81, 117);
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                to right,
+                rgb(88, 0, 0),
+                red 60%,
+                yellow
+              );
+              height: 40px;
+            "
+          ></div>
+
+          <div
+            id="enemyHealth"
+            style="
+              position: absolute;
+              background: linear-gradient(
+                to right,
+                #818cf8 60%,
+                rgb(70, 41, 195)
+              );
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- game message -->
+    <div
+      id="message-backdrop"
+      style="
+        opacity: 0;
+        font-family: 'Silkscreen', sans-serif;
+        font-size: 72px;
+        position: absolute;
+        background-color: rgba(101, 81, 117, 0.6);
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all 600ms linear;
+        z-index: 1;
+      "
+    >
+      <p id="message"></p>
+      <button
+        id="reset-game"
+        type="button"
+        style="
+          display: none;
+          width: 200px;
+          background-color: #818cf8;
+          border-radius: 4px;
+          border: 1px solid rgb(77, 63, 88);
+          z-index: 999;
+          border: none;
+          outline: none;
+          font-size: 22px;
+          line-height: 1.6;
+          font-family: 'Press Start 2P', system-ui;
+          color: white;
+          padding: 12px;
+          cursor: pointer;
+        "
+      >
+        Play Again
+      </button>
+    </div>
+    <canvas></canvas>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
