@@ -15,19 +15,24 @@
         user-select: none;
         box-sizing: border-box;
       }
-    </style>
-  </head>
-  <body style="margin: 0; padding: 0; background-color: rgb(41, 33, 48)">
-    <div
-      id="health"
-      style="
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(41, 33, 48);
+      }
+
+      #health {
         position: relative;
         width: 1024px;
-        top: 100px;
         z-index: 99;
-        left: 14.4%;
-      "
-    >
+        margin: 0 auto;
+        top: 4.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="health">
       <div
         style="
           position: absolute;
@@ -65,11 +70,7 @@
             id="playerHealth"
             style="
               position: absolute;
-              background: linear-gradient(
-                to right,
-                rgb(70, 41, 195),
-                #818cf8 60%
-              );
+              background: linear-gradient(to right, rgb(70, 41, 195), #818cf8 60%);
               top: 0;
               bottom: 0;
               left: 0;
@@ -122,12 +123,7 @@
         >
           <div
             style="
-              background: linear-gradient(
-                to right,
-                rgb(88, 0, 0),
-                red 60%,
-                yellow
-              );
+              background: linear-gradient(to right, rgb(88, 0, 0), red 60%, yellow);
               height: 40px;
             "
           ></div>
@@ -136,11 +132,7 @@
             id="enemyHealth"
             style="
               position: absolute;
-              background: linear-gradient(
-                to right,
-                #818cf8 60%,
-                rgb(70, 41, 195)
-              );
+              background: linear-gradient(to right, #818cf8 60%, rgb(70, 41, 195));
               top: 0;
               bottom: 0;
               left: 0;
